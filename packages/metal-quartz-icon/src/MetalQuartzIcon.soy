@@ -5,11 +5,11 @@
  * found at http://liferay.github.io/lexicon/content/icons-lexicon/
  *
  * @param? elementClasses
- * @param spritemap
+ * @param? spritemap
  * @param symbol
  */
 {template .render}
-	{if isNonnull($symbol) and isNonnull($spritemap)}
+	{if isNonnull($symbol)}
 		<svg aria-hidden="true" class="lexicon-icon lexicon-icon-{$symbol}{$elementClasses ? ' ' + $elementClasses : ''}">
 			<use xlink:href="{$spritemap}#{$symbol}" />
 		</svg>

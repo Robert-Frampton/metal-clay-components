@@ -26,8 +26,8 @@ MetalQuartzIcon.STATE = {
 	 * @type {string}
 	 */
 	spritemap: {
-		required: true,
-		validator: core.isString
+		validator: core.isString,
+		value: '../node_modules/lexicon-ux/build/images/icons/icons.svg'
 	},
 
 	/**

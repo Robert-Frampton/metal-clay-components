@@ -11,9 +11,55 @@
 		<h1>Metal Quartz Dropdown</h1>
 
 		<script type="text/javascript">
+			window.dropdown = new metal.MetalQuartzDropdown({
+				elementClasses: 'dropdown-wide',
+				dropdownToggle: {
+					component: 'link',
+					elementClasses: 'btn btn-link',
+					href: '#1',
+					label: 'Link Dropdown Toggle'
+				},
+
+				dropdownItems: [{
+					component: 'link',
+					href: '#1',
+					label: 'Dropdown Item 1'
+				}, {
+					component: 'link',
+					elementClasses: 'active',
+					href: '#1',
+					label: 'Dropdown Item 2'
+				}, {
+					component: 'link',
+					elementClasses: 'disabled',
+					href: '#1',
+					label: 'Dropdown Item 3'
+				}]
+			});
+
 			new metal.MetalQuartzDropdown({
-				elementClasses: 'css-class',
-				content: 'foo'
+				dropdownToggle: {
+					component: 'button',
+					elementClasses: 'btn btn-primary',
+					href: '#1',
+					label: 'Button Dropdown Toggle'
+				},
+
+				dropdownItems: [{
+					component: 'link',
+					href: '#1',
+					label: 'Dropdown Item 1'
+				}, {
+					component: 'link',
+					elementClasses: 'active',
+					href: '#1',
+					label: 'Dropdown Item 2'
+				}, {
+					component: 'link',
+					elementClasses: 'disabled',
+					href: '#1',
+					label: 'Dropdown Item 3'
+				}]
 			});
 		</script>
 	</body>

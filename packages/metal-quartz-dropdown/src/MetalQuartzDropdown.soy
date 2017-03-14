@@ -2,9 +2,165 @@
 
 /**
  * This renders a Metal Quartz Dropdown component.
- *
- * @param content
+ * @param? alignedPosition
+ * @param? classMap
+ * @param? dropdownItems
+ * @param dropdownOpenClass
+ * @param dropdownParentElement
+ * @param? dropdownToggle
+ * @param? elementClasses
+ * @param? expanded
+ * @param? position
+ * @param? positionClassOnMenu
  */
 {template .render}
-	<section>{$content}</section>
+	{@param? body: html}
+	{@param? header: html}
+
+	{let $classes: $classMap ? $classMap : ['dropup', 'dropup', 'dropright', 'dropdown', 'dropdown', 'dropdown', 'dropleft', 'dropup'] /}
+	{let $currentPosition: isNonnull($alignedPosition) ? $alignedPosition : $position /}
+	{let $positionClass: isNonnull($currentPosition) ? $classes[$currentPosition] : 'dropdown' /}
+
+	{let $dropdownParentElementClasses kind="text"}
+		{$positionClassOnMenu ? 'dropdown' : $positionClass}
+		{$elementClasses ? ' ' + $elementClasses : ''}
+		{$expanded ? ' ' + $dropdownOpenClass : ''}
+	{/let}
+
+	{let $dropdownHeader kind="html"}
+		{if $dropdownToggle}
+			{let $dropdownToggleElementClasses kind="text"}
+				{$dropdownToggle.elementClasses ? ' ' + $dropdownToggle.elementClasses : ''}
+			{/let}
+
+			{let $dropdownToggleLabel kind="text"}
+				{$dropdownToggle.label ? $dropdownToggle.label + ' ' : ''}
+			{/let}
+
+			{delcall DropdownToggle variant="$dropdownToggle.component" data="all"}
+				{param dropdownToggle: $dropdownToggle /}
+				{param dropdownToggleElementClasses: $dropdownToggleElementClasses /}
+				{param dropdownToggleLabel: $dropdownToggleLabel /}
+			{/delcall}
+		{else}
+			{$header}
+		{/if}
+	{/let}
+
+	{let $dropdownBody kind="html"}
+		{if $dropdownItems}
+			{foreach $dropdownItem in $dropdownItems}
+				{let $dropdownItemElementClasses kind="text"}
+					{$dropdownItem.elementClasses ? ' ' + $dropdownItem.elementClasses : ''}
+				{/let}
+
+				{delcall DropdownItem variant="$dropdownItem.component" data="all"}
+					{param dropdownItem: $dropdownItem /}
+					{param dropdownItemElementClasses: $dropdownItemElementClasses /}
+				{/delcall}
+			{/foreach}
+		{else}
+			{$body}
+		{/if}
+	{/let}
+
+	{call .dropdownParentOpeningTag}
+		{param dropdownParentElement: $dropdownParentElement /}
+		{param dropdownParentElementClasses: $dropdownParentElementClasses /}
+	{/call}
+		{$dropdownHeader}
+
+		<ul class="dropdown-menu{$positionClassOnMenu ? ' ' + $positionClass : ''}">
+			{$dropdownBody}
+		</ul>
+	{call .dropdownParentClosingTag}
+		{param dropdownParentElement: $dropdownParentElement /}
+	{/call}
 {/template}
+
+/**
+ * @param dropdownParentElement
+ * @param? dropdownParentElementClasses
+ */
+{template .dropdownParentOpeningTag}
+	{switch $dropdownParentElement}
+		{case 'li'}
+			<li class="{$dropdownParentElementClasses}">
+		{case 'span'}
+			<span class="{$dropdownParentElementClasses}">
+		{case 'p'}
+			<p class="{$dropdownParentElementClasses}">
+		{default}
+			<div class="{$dropdownParentElementClasses}">
+	{/switch}
+{/template}
+
+/**
+ * @param dropdownParentElement
+ */
+{template .dropdownParentClosingTag}
+	{switch $dropdownParentElement}
+		{case 'li'}
+			</li>
+		{case 'span'}
+			</span>
+		{case 'p'}
+			</p>
+		{default}
+			</div>
+	{/switch}
+{/template}
+
+/**
+ * @param dropdownItem
+ * @param? dropdownItemElementClasses
+ */
+{deltemplate DropdownItem}
+	<li class="{$dropdownItemElementClasses}">
+		<a href="{$dropdownItem.href}">
+			{$dropdownItem.label}
+		</a>
+	</li>
+{/deltemplate}
+
+/**
+ * Dropdown Toggle Default
+ * @param dropdownToggle
+ * @param? dropdownToggleElementClasses
+ * @param? dropdownToggleLabel
+ */
+ {deltemplate DropdownToggle}
+ 	<a class="{$dropdownToggleElementClasses}" data-onclick="toggle" href="{$dropdownToggle.href}">
+ 		{$dropdownToggleLabel}
+
+		{if $dropdownToggle.spritemap and $dropdownToggle.symbol}
+			{call MetalQuartzIcon.render data="all"}
+				{param spritemap: $dropdownToggle.spritemap /}
+				{param symbol: $dropdownToggle.symbol /}
+			{/call}
+		{else}
+			<span class="caret"></span>
+		{/if}
+ 	</a>
+ {/deltemplate}
+
+/**
+ * Dropdown Toggle Button
+ * @param dropdownToggle
+ * @param? dropdownToggleElementClasses
+ * @param? dropdownToggleLabel
+ */
+{deltemplate DropdownToggle variant="'button'"}
+	<button class="btn{$dropdownToggleElementClasses}" data-onclick="toggle" href="{$dropdownToggle.href}">
+		{$dropdownToggleLabel}
+
+		{if $dropdownToggle.spritemap and $dropdownToggle.symbol}
+			{call MetalQuartzIcon.render data="all"}
+				{param spritemap: $dropdownToggle.spritemap /}
+				{param symbol: $dropdownToggle.symbol /}
+			{/call}
+		{else}
+			<span class="caret"></span>
+		{/if}
+ 	</button>
+ {/deltemplate}

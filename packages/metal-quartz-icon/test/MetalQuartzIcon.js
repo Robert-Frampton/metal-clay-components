@@ -2,8 +2,6 @@
 
 import MetalQuartzIcon from '../src/MetalQuartzIcon';
 
-const spritemap = '../node_modules/lexicon-ux/build/images/icons/icons.svg';
-
 let quartzIcon;
 
 describe('MetalQuartzIcon', function() {
@@ -16,7 +14,6 @@ describe('MetalQuartzIcon', function() {
 	it('should generate markup for icon `add-cell`', function() {
 		quartzIcon = new MetalQuartzIcon(
 			{
-				spritemap: spritemap,
 				symbol: 'add-cell'
 			}
 		);
@@ -28,7 +25,6 @@ describe('MetalQuartzIcon', function() {
 		quartzIcon = new MetalQuartzIcon(
 			{
 				elementClasses: 'icon-monospaced',
-				spritemap: spritemap,
 				symbol: 'add-cell'
 			}
 		);
@@ -39,22 +35,8 @@ describe('MetalQuartzIcon', function() {
 	});
 
 	it('should not output any markup if symbol is undefined', function() {
-		quartzIcon = new MetalQuartzIcon(
-			{
-				spritemap: spritemap
-			}
-		);
+		quartzIcon = new MetalQuartzIcon();
 
 		assert.equal(quartzIcon.element, null);
 	});
-
-	it('should not output any markup if spritemap is undefined', function() {
-		quartzIcon = new MetalQuartzIcon(
-			{
-				symbol: 'add-cell'
-			}
-		);
-
-		assert.equal(quartzIcon.element, null);
-	})
 });

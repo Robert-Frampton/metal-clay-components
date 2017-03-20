@@ -1,6 +1,6 @@
 # metal-quartz-icon
 
-ggg
+A Metal component for rendering Quartz Icons (http://liferay.github.io/lexicon/content/icons-lexicon/).
 
 ## Setup
 

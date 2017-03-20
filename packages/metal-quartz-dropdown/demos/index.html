@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Demo: Metal Quartz Dropdown</title>
+
+		<link rel="stylesheet" href="../node_modules/lexicon-ux/build/css/atlas-font-awesome.css">
+		<script src="../build/globals/metal-quartz-dropdown.js"></script>
+	</head>
+	<body>
+		<h1>Metal Quartz Dropdown</h1>
+
+		<script type="text/javascript">
+			window.dropdown = new metal.MetalQuartzDropdown({
+				elementClasses: 'dropdown-wide',
+				dropdownToggle: {
+					component: 'link',
+					elementClasses: 'btn btn-link',
+					href: '#1',
+					label: 'Link Dropdown Toggle'
+				},
+
+				dropdownItems: [{
+					component: 'link',
+					href: '#1',
+					label: 'Dropdown Item 1'
+				}, {
+					component: 'link',
+					elementClasses: 'active',
+					href: '#1',
+					label: 'Dropdown Item 2'
+				}, {
+					component: 'link',
+					elementClasses: 'disabled',
+					href: '#1',
+					label: 'Dropdown Item 3'
+				}]
+			});
+
+			new metal.MetalQuartzDropdown({
+				dropdownToggle: {
+					component: 'button',
+					elementClasses: 'btn btn-primary',
+					href: '#1',
+					label: 'Button Dropdown Toggle'
+				},
+
+				dropdownItems: [{
+					component: 'link',
+					href: '#1',
+					label: 'Dropdown Item 1'
+				}, {
+					component: 'link',
+					elementClasses: 'active',
+					href: '#1',
+					label: 'Dropdown Item 2'
+				}, {
+					component: 'link',
+					elementClasses: 'disabled',
+					href: '#1',
+					label: 'Dropdown Item 3'
+				}]
+			});
+		</script>
+	</body>
+</html>

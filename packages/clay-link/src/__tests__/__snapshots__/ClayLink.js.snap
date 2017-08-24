@@ -1,48 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ClayLink should generate the default markup 1`] = `<a></a>`;
+exports[`ClayLink should generate the default markup 1`] = `
+<div>
+  <a></a>
+</div>
+`;
 
-exports[`ClayLink should render a downloadable link 1`] = `<a download="downloadLink"></a>`;
+exports[`ClayLink should render a downloadable link 1`] = `
+<div>
+  <a download="downloadLink"></a>
+</div>
+`;
 
-exports[`ClayLink should render a link with a label 1`] = `<a>My Link</a>`;
+exports[`ClayLink should render a link with a label 1`] = `
+<div>
+  <a>My Link</a>
+</div>
+`;
 
-exports[`ClayLink should render a link with aria label 1`] = `<a aria-label="My Link"></a>`;
+exports[`ClayLink should render a link with aria label 1`] = `
+<div>
+  <a aria-label="My Link"></a>
+</div>
+`;
 
-exports[`ClayLink should render a link with button borderless style 1`] = `<a class="btn btn-borderless"></a>`;
+exports[`ClayLink should render a link with button borderless style 1`] = `
+<div>
+  <a class="btn btn-borderless"></a>
+</div>
+`;
 
-exports[`ClayLink should render a link with button link style 1`] = `<a class="btn btn-link"></a>`;
+exports[`ClayLink should render a link with button link style 1`] = `
+<div>
+  <a class="btn btn-link"></a>
+</div>
+`;
 
-exports[`ClayLink should render a link with button primary style 1`] = `<a class="btn btn-primary"></a>`;
+exports[`ClayLink should render a link with button primary style 1`] = `
+<div>
+  <a class="btn btn-primary"></a>
+</div>
+`;
 
-exports[`ClayLink should render a link with button secondary style 1`] = `<a class="btn btn-secondary"></a>`;
+exports[`ClayLink should render a link with button secondary style 1`] = `
+<div>
+  <a class="btn btn-secondary"></a>
+</div>
+`;
 
-exports[`ClayLink should render a link with href 1`] = `<a href="http://www.liferay.com"></a>`;
+exports[`ClayLink should render a link with href 1`] = `
+<div>
+  <a href="http://www.liferay.com"></a>
+</div>
+`;
 
 exports[`ClayLink should render a link with icon 1`] = `
-<a>
-  <svg aria-hidden="true" class="lexicon-icon lexicon-icon-plus icon-monospaced">
-    <use xlink:href="icons.svg#plus"></use>
-  </svg>
-</a>
+<div>
+  <a>
+    <svg aria-hidden="true" class="lexicon-icon lexicon-icon-plus icon-monospaced">
+      <use xlink:href="icons.svg#plus"></use>
+    </svg>
+  </a>
+</div>
 `;
 
 exports[`ClayLink should render a link with icon and label 1`] = `
-<a>
-  <svg aria-hidden="true" class="lexicon-icon lexicon-icon-plus icon-monospaced">
-    <use xlink:href="icons.svg#plus"></use>
-  </svg>My Link</a>
+<div>
+  <a>
+    <svg aria-hidden="true" class="lexicon-icon lexicon-icon-plus icon-monospaced">
+      <use xlink:href="icons.svg#plus"></use>
+    </svg>My Link</a>
+</div>
 `;
 
-exports[`ClayLink should render a link with id 1`] = `<a id="myLink"></a>`;
+exports[`ClayLink should render a link with id 1`] = `
+<div>
+  <a id="myLink"></a>
+</div>
+`;
 
 exports[`ClayLink should render a link with label and icon 1`] = `
-<a>My Link
-  <svg aria-hidden="true" class="lexicon-icon lexicon-icon-plus icon-monospaced">
-    <use xlink:href="icons.svg#plus"></use>
-  </svg>
-</a>
+<div>
+  <a>My Link
+    <svg aria-hidden="true" class="lexicon-icon lexicon-icon-plus icon-monospaced">
+      <use xlink:href="icons.svg#plus"></use>
+    </svg>
+  </a>
+</div>
 `;
 
-exports[`ClayLink should render a link with secondary style 1`] = `<a class="link-secondary"></a>`;
+exports[`ClayLink should render a link with secondary style 1`] = `
+<div>
+  <a class="link-secondary"></a>
+</div>
+`;
 
-exports[`ClayLink should render a link with target 1`] = `<a target="_blank"></a>`;
+exports[`ClayLink should render a link with target 1`] = `
+<div>
+  <a target="_blank"></a>
+</div>
+`;

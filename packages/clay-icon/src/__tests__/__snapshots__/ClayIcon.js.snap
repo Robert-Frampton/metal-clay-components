@@ -1,25 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ClayIcon should generate markup for icon \`add-cell\` 1`] = `
-<svg aria-hidden="true" class="lexicon-icon lexicon-icon-add-cell">
-  <use xlink:href="../node_modules/lexicon-ux/build/images/icons/icons.svg#add-cell"></use>
-</svg>
+<div>
+  <svg aria-hidden="true" class="lexicon-icon lexicon-icon-add-cell">
+    <use xlink:href="../node_modules/lexicon-ux/build/images/icons/icons.svg#add-cell"></use>
+  </svg>
+</div>
 `;
 
 exports[`ClayIcon should render a \`add-cell\` icon with id 1`] = `
-<svg aria-hidden="true" class="lexicon-icon lexicon-icon-add-cell" id="myIcon">
-  <use xlink:href="../node_modules/lexicon-ux/build/images/icons/icons.svg#add-cell"></use>
-</svg>
+<div>
+  <svg aria-hidden="true" class="lexicon-icon lexicon-icon-add-cell" id="myIcon">
+    <use xlink:href="../node_modules/lexicon-ux/build/images/icons/icons.svg#add-cell"></use>
+  </svg>
+</div>
 `;
 
 exports[`ClayIcon should render a monospaced \`add-cell\` icon 1`] = `
-<svg aria-hidden="true" class="lexicon-icon lexicon-icon-add-cell icon-monospaced">
-  <use xlink:href="../node_modules/lexicon-ux/build/images/icons/icons.svg#add-cell"></use>
-</svg>
+<div>
+  <svg aria-hidden="true" class="lexicon-icon lexicon-icon-add-cell icon-monospaced">
+    <use xlink:href="../node_modules/lexicon-ux/build/images/icons/icons.svg#add-cell"></use>
+  </svg>
+</div>
 `;
 
 exports[`ClayIcon should render a not monospaced \`add-cell\` icon 1`] = `
-<svg aria-hidden="true" class="lexicon-icon lexicon-icon-add-cell">
-  <use xlink:href="../node_modules/lexicon-ux/build/images/icons/icons.svg#add-cell"></use>
-</svg>
+<div>
+  <svg aria-hidden="true" class="lexicon-icon lexicon-icon-add-cell">
+    <use xlink:href="../node_modules/lexicon-ux/build/images/icons/icons.svg#add-cell"></use>
+  </svg>
+</div>
 `;

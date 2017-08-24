@@ -22,6 +22,10 @@ describe('ClayButton', function() {
 			type: 'submit',
 		});
 
+		console.log(button);
+		console.log(button.element);
+		console.log(button.element.outerHTML);
+
 		expect(button).toMatchSnapshot();
 	});
 

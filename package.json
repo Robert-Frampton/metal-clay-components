@@ -6,7 +6,7 @@
     "lint": "eslint packages/clay-*/src/*.js packages/clay-*/src/**/*.js",
     "precommit": "lint-staged",
     "start": "http-server . -p 4000",
-    "test": "lerna run soy && jest"
+    "test": "lerna run soy && jest packages/clay-button"
   },
   "devDependencies": {
     "babel-preset-metal": "^4.1.0",

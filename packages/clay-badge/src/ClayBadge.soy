@@ -72,21 +72,17 @@
 	{let $iconAlignment: $icon and $icon.alignment ? $icon.alignment : 'right' /}
 
 	{if $icon and $iconAlignment == 'left'}
-		<button aria-label="close" class="close" type="button">
-			{call .icon}
-				{param icon: $icon /}
-			{/call}
-		</button>
+		{call .icon}
+			{param icon: $icon /}
+		{/call}
 	{/if}
 
 	{$label ? $label : ''}
 
 	{if $icon and $iconAlignment == 'right'}
-		<button aria-label="close" class="close" type="button">
-			{call .icon}
-				{param icon: $icon /}
-			{/call}
-		</button>
+		{call .icon}
+			{param icon: $icon /}
+		{/call}
 	{/if}
 {/template}
 
@@ -102,9 +98,11 @@
 		symbol: string
 	]}
 
-	{call ClayIcon.render}
-		{param monospaced: $icon.monospaced /}
-		{param spritemap: $icon.spritemap /}
-		{param symbol: $icon.symbol /}
-	{/call}
+	<button aria-label="close" class="close" type="button">
+		{call ClayIcon.render}
+			{param monospaced: $icon.monospaced /}
+			{param spritemap: $icon.spritemap /}
+			{param symbol: $icon.symbol /}
+		{/call}
+	</button>
 {/template}
